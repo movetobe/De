@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">De</string>
+    <string name="tab_day">Day</string>
+    <string name="tab_week">Week</string>
+    <string name="tab_month">Month</string>
+    <string name="tab_year">Year</string>
+</resources>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.main.PlaceholderFragment">
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#ECECF8">
+        <TextView
+            android:id="@+id/time_line"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="#ffffff"
+            android:layout_marginRight="1dp"
+            android:textColor="#040303" />
+
+        <TextView
+            android:id="@+id/focus"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:background="#ffffff"
+            android:layout_weight="1"
+            android:layout_marginLeft="1dp"
+            android:textColor="#040303" />
+    </TableRow>
+    <TableRow
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:background="#ECECF8"
+        android:layout_weight="10">
+        <TextView
+            android:id="@+id/section_label1"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:contextClickable="true"
+            android:layout_weight="1"
+            android:lines="15"
+            android:ellipsize="end"
+            android:scrollbars="vertical"
+            android:background="#ffffff"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:textColor="#040303" />
+
+        <TextView
+            android:id="@+id/section_label2"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:clickable="true"
+            android:scrollbars="vertical"
+            android:background="#ffffff"
+            android:lines="15"
+            android:ellipsize="end"
+            android:layout_weight="1"
+            android:layout_marginBottom="1dp"
+            android:textColor="#040303" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#ECECF8">
+        <TextView
+            android:id="@+id/personal_todo"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="#ffffff"
+            android:layout_marginRight="1dp"
+            android:textColor="#040303" />
+
+        <TextView
+            android:id="@+id/work_todo"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:background="#ffffff"
+            android:layout_weight="1"
+            android:layout_marginLeft="1dp"
+            android:textColor="#040303" />
+    </TableRow>
+
+    <TableRow
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:background="#ECECF8"
+        android:layout_weight="10">
+        <TextView
+            android:id="@+id/section_label3"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:background="#ffffff"
+            android:clickable="true"
+            android:layout_weight="1"
+            android:lines="15"
+            android:ellipsize="end"
+            android:scrollbars="vertical"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:textColor="#040303" />
+
+        <TextView
+            android:id="@+id/section_label4"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:clickable="true"
+            android:background="#ffffff"
+            android:lines="15"
+            android:ellipsize="end"
+            android:scrollbars="vertical"
+            android:layout_weight="1"
+            android:layout_marginBottom="1dp"
+            android:textColor="#040303" />
+    </TableRow>
+</TableLayout>
