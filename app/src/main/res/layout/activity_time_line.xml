@@ -10,8 +10,14 @@
         android:id="@+id/saveButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        app:srcCompat="@mipmap/de_ic_launcher_round" />
+        android:layout_gravity="top|end"
+        android:fontFamily="Arial"
+        android:scaleType="center"
+        android:scrollbarSize="@dimen/de_save_size"
+        app:fabCustomSize="48dp"
+        app:fabSize="normal"
+        app:maxImageSize="@dimen/de_save_size"
+        app:srcCompat="@mipmap/de_save" />
 
     <EditText
         android:id="@+id/editText"
@@ -21,11 +27,13 @@
         android:selectAllOnFocus="true"
         android:background="#ffffff"
         android:enabled="true"
+        android:fontFamily="Arial"
         android:gravity="start|top"
         android:inputType="textMultiLine"
         android:focusable="true"
         android:cursorVisible="true"
-        android:textCursorDrawable="@color/cardview_dark_background"
+        android:layout_margin="1dp"
+        android:textCursorDrawable="@drawable/de_cursor"
         android:visibility="visible" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

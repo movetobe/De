@@ -21,6 +21,8 @@ import com.example.de.R;
 import com.example.de.TimeLineActivity;
 import com.example.de.WorkTodoActivity;
 
+import static android.app.Activity.RESULT_OK;
+
 /**
  * A placeholder fragment containing a simple view.
  */
@@ -64,9 +66,11 @@ public class PlaceholderFragment extends Fragment {
         super.onActivityResult(requestCode, resultCode, data);
 
         for (int i = 0; i < tables.length; i++) {
-            String s = data.getStringExtra(tables[i]);
-            store(tables[i], s);
-            pageViewModel.setmString(s, i);
+            if (requestCode == requests[i] && resultCode == RESULT_OK) {
+                String s = data.getStringExtra(tables[i]);
+                store(tables[i], s);
+                pageViewModel.setmString(s, i);
+            }
         }
     }
 

@@ -17,6 +17,7 @@
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="Arial"
             android:gravity="center"
             android:minHeight="?actionBarSize"
             android:padding="@dimen/appbar_padding"
@@ -29,6 +30,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center_vertical"
+        android:fontFamily="Arial"
         android:layout_weight="9"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
     </androidx.viewpager.widget.ViewPager>
@@ -38,6 +40,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
+        android:fontFamily="Arial"
         android:layout_weight="1"
         android:background="?attr/colorPrimary" />
 </LinearLayout>

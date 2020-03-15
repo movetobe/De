@@ -18,6 +18,7 @@
             android:layout_height="fill_parent"
             android:layout_weight="1"
             android:background="#ffffff"
+            android:fontFamily="Arial"
             android:layout_marginRight="1dp"
             android:textColor="#040303" />
 
@@ -27,7 +28,7 @@
             android:layout_height="fill_parent"
             android:background="#ffffff"
             android:layout_weight="1"
-            android:layout_marginLeft="1dp"
+            android:fontFamily="Arial"
             android:textColor="#040303" />
     </TableRow>
     <TableRow
@@ -39,6 +40,7 @@
             android:id="@+id/section_label1"
             android:layout_width="0dp"
             android:layout_height="fill_parent"
+            android:fontFamily="Arial"
             android:contextClickable="true"
             android:layout_weight="1"
             android:lines="15"
@@ -55,6 +57,7 @@
             android:layout_height="fill_parent"
             android:clickable="true"
             android:scrollbars="vertical"
+            android:fontFamily="Arial"
             android:background="#ffffff"
             android:lines="15"
             android:ellipsize="end"
@@ -71,6 +74,7 @@
         <TextView
             android:id="@+id/personal_todo"
             android:layout_width="0dp"
+            android:fontFamily="Arial"
             android:layout_height="fill_parent"
             android:layout_weight="1"
             android:background="#ffffff"
@@ -82,8 +86,8 @@
             android:layout_width="0dp"
             android:layout_height="fill_parent"
             android:background="#ffffff"
+            android:fontFamily="Arial"
             android:layout_weight="1"
-            android:layout_marginLeft="1dp"
             android:textColor="#040303" />
     </TableRow>
 
@@ -97,6 +101,7 @@
             android:layout_width="0dp"
             android:layout_height="fill_parent"
             android:background="#ffffff"
+            android:fontFamily="Arial"
             android:clickable="true"
             android:layout_weight="1"
             android:lines="15"
@@ -111,6 +116,7 @@
             android:layout_width="0dp"
             android:layout_height="fill_parent"
             android:clickable="true"
+            android:fontFamily="Arial"
             android:background="#ffffff"
             android:lines="15"
             android:ellipsize="end"

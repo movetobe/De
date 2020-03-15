@@ -28,5 +28,4 @@ public class MainActivity extends AppCompatActivity {
         TextView textView = findViewById(R.id.title);
         textView.setText(new SimpleDateFormat("yyyy年MM月dd日").format(new Date(System.currentTimeMillis())));
     }
-
 }
