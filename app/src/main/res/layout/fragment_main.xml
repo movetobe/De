@@ -20,6 +20,7 @@
             android:background="#ffffff"
             android:fontFamily="Arial"
             android:layout_marginRight="1dp"
+            android:padding="6dp"
             android:textColor="#040303" />
 
         <TextView
@@ -29,6 +30,7 @@
             android:background="#ffffff"
             android:layout_weight="1"
             android:fontFamily="Arial"
+            android:padding="6dp"
             android:textColor="#040303" />
     </TableRow>
     <TableRow
@@ -78,6 +80,7 @@
             android:layout_height="fill_parent"
             android:layout_weight="1"
             android:background="#ffffff"
+            android:padding="6dp"
             android:layout_marginRight="1dp"
             android:textColor="#040303" />
 
@@ -88,6 +91,7 @@
             android:background="#ffffff"
             android:fontFamily="Arial"
             android:layout_weight="1"
+            android:padding="6dp"
             android:textColor="#040303" />
     </TableRow>
 

@@ -20,6 +20,7 @@ import com.example.de.PersonalTodoActivity;
 import com.example.de.R;
 import com.example.de.TimeLineActivity;
 import com.example.de.WorkTodoActivity;
+import com.example.de.WriteActivity;
 
 import static android.app.Activity.RESULT_OK;
 
@@ -31,7 +32,12 @@ public class PlaceholderFragment extends Fragment {
     private static final String ARG_SECTION_NUMBER = "section_number";
     private PageViewModel pageViewModel;
     private static String[] tables = {"time_line", "focus", "personal_todo", "work_todo"};
+    private static String[][] titles = {{"今日时间线", "今日聚焦", "今日个人待办", "今日工作待办"},
+                                        {"本周任务清单", "本周聚焦", "本周个人待办", "本周工作待办"},
+                                        {"本月任务清单", "本月聚焦", "本月个人待办", "本月工作待办"},
+                                        {"今年任务清单", "今年聚焦", "今年个人待办", "今年工作待办"}};
     private static int[] requests = {0, 1, 2, 3};
+    private static String section_title = "section_title";
 
     public static PlaceholderFragment newInstance(int index) {
         PlaceholderFragment fragment = new PlaceholderFragment();
@@ -80,15 +86,12 @@ public class PlaceholderFragment extends Fragment {
             Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_main, container, false);
 
-        TextView v1 = root.findViewById(R.id.time_line);
-        TextView v2 = root.findViewById(R.id.focus);
-        TextView v3 = root.findViewById(R.id.personal_todo);
-        TextView v4 = root.findViewById(R.id.work_todo);
+        final TextView v1 = root.findViewById(R.id.time_line);
+        final TextView v2 = root.findViewById(R.id.focus);
+        final TextView v3 = root.findViewById(R.id.personal_todo);
+        final TextView v4 = root.findViewById(R.id.work_todo);
 
-        int index = 1;
-        if (getArguments() != null) {
-            index = getArguments().getInt(ARG_SECTION_NUMBER);
-        }
+        final int index = getArguments().getInt(ARG_SECTION_NUMBER);
         switch (index) {
             case 1:
                 v1.setText("今日时间线");
@@ -149,7 +152,9 @@ public class PlaceholderFragment extends Fragment {
         textView1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), TimeLineActivity.class);
+                Intent intent = new Intent(getActivity(), WriteActivity.class);
+                intent.putExtra(section_title, v1.getText().toString());
+                intent.putExtra("section", requests[0]);
                 intent.putExtra(tables[0], textView1.getText().toString());
                 startActivityForResult(intent, requests[0]);
             }
@@ -157,7 +162,9 @@ public class PlaceholderFragment extends Fragment {
         textView2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), FocusActivity.class);
+                Intent intent = new Intent(getActivity(), WriteActivity.class);
+                intent.putExtra(section_title, v2.getText().toString());
+                intent.putExtra("section", requests[1]);
                 intent.putExtra(tables[1], textView2.getText().toString());
                 startActivityForResult(intent, requests[1]);
             }
@@ -165,7 +172,9 @@ public class PlaceholderFragment extends Fragment {
         textView3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), PersonalTodoActivity.class);
+                Intent intent = new Intent(getActivity(), WriteActivity.class);
+                intent.putExtra(section_title, v3.getText().toString());
+                intent.putExtra("section", requests[2]);
                 intent.putExtra(tables[2], textView3.getText().toString());
                 startActivityForResult(intent, requests[2]);
             }
@@ -173,7 +182,9 @@ public class PlaceholderFragment extends Fragment {
         textView4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), WorkTodoActivity.class);
+                Intent intent = new Intent(getActivity(), WriteActivity.class);
+                intent.putExtra(section_title, v4.getText().toString());
+                intent.putExtra("section", requests[3]);
                 intent.putExtra(tables[3], textView4.getText().toString());
                 startActivityForResult(intent, requests[3]);
             }

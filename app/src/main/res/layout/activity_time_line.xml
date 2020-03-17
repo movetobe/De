@@ -1,23 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".TimeLineActivity">
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/saveButton"
-        android:layout_width="wrap_content"
+    <TableLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="top|end"
-        android:fontFamily="Arial"
-        android:scaleType="center"
-        android:scrollbarSize="@dimen/de_save_size"
-        app:fabCustomSize="48dp"
-        app:fabSize="normal"
-        app:maxImageSize="@dimen/de_save_size"
-        app:srcCompat="@mipmap/de_save" />
+        android:layout_gravity="top"
+        android:background="#FFFFFF">
+        <TableRow>
+        <TextView
+            android:id="@+id/title_each"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:fontFamily="Arial"
+            android:gravity="left"
+            android:minHeight="?actionBarSize"
+            android:background="#FFFFFF"
+            android:padding="@dimen/appbar_padding"
+            android:textColor="#C3C3C3"/>
+        <Button
+            android:id="@+id/saveButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|right"
+            android:layout_weight="1"
+            android:fontFamily="Arial"
+            android:background="#FF9800"
+            android:textColor="#C3C3C3"
+            android:layout_margin="2dp"
+            android:text="保存"/>
+        </TableRow>
+    </TableLayout>
 
     <EditText
         android:id="@+id/editText"
@@ -36,4 +54,4 @@
         android:textCursorDrawable="@drawable/de_cursor"
         android:visibility="visible" />
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</LinearLayout>
