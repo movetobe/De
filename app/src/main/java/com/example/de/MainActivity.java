@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case 1:
                         tab.setIcon(R.mipmap.week);
-                        textView.setText(new SimpleDateFormat("yyyy年MM月dd日").format(new Date(System.currentTimeMillis())));
+                        textView.setText(new SimpleDateFormat("yyyy年MM月W周").format(new Date(System.currentTimeMillis())));
                         break;
                     case 2:
                         tab.setIcon(R.mipmap.month);

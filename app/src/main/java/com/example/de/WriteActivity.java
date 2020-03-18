@@ -44,9 +44,17 @@ public class WriteActivity extends AppCompatActivity {
         nosavebt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                intent.putExtra(keys[section], str);
-                setResult(RESULT_OK, intent);
-                finish();
+                AlertDialog.Builder saveDialog = new AlertDialog.Builder(WriteActivity.this);
+                //设置对话框标题
+                saveDialog.setTitle("De");
+                //设置对话框消息
+                saveDialog.setMessage("是否保存修改");
+                // 添加选择按钮并注册监听
+                saveDialog.setPositiveButton("确定",diaListener);
+
+                saveDialog.setNegativeButton("取消",diaListener);
+                //对话框显示
+                saveDialog.show();
             }
         });
         savebt = findViewById(R.id.saveButton);
@@ -62,7 +70,6 @@ public class WriteActivity extends AppCompatActivity {
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if(keyCode == KeyEvent.KEYCODE_BACK){
-
             AlertDialog.Builder saveDialog = new AlertDialog.Builder(this);
             //设置对话框标题
             saveDialog.setTitle("De");
@@ -70,7 +77,7 @@ public class WriteActivity extends AppCompatActivity {
             saveDialog.setMessage("是否保存修改");
             // 添加选择按钮并注册监听
             saveDialog.setPositiveButton("确定",diaListener);
-            
+
             saveDialog.setNegativeButton("取消",diaListener);
             //对话框显示
             saveDialog.show();

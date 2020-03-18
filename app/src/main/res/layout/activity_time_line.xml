@@ -65,6 +65,7 @@
         android:fontFamily="Arial"
         android:gravity="start|top"
         android:focusable="true"
+        android:padding="@dimen/text_padding"
         android:cursorVisible="true"
         android:layout_margin="1dp"
         android:textCursorDrawable="@drawable/de_cursor"
