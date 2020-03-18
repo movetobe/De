@@ -16,7 +16,7 @@
             android:id="@+id/title_each"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="5"
+            android:layout_weight="8"
             android:fontFamily="Arial"
             android:gravity="left"
             android:minHeight="?actionBarSize"
@@ -35,22 +35,21 @@
             android:textColor="#FF9800"
             android:gravity="center"
             android:clickable="true"
-            android:textStyle="bold"
-            android:textSize="34dp"
-            android:text="x"/>
+            android:textSize="24dp"
+            android:text="✘"/>
         <TextView
             android:id="@+id/saveButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:layout_marginRight="@dimen/text_padding"
             android:fontFamily="Arial"
             android:background="@color/colorPrimary"
             android:textColor="#FF9800"
             android:gravity="center"
             android:clickable="true"
-            android:textStyle="bold"
-            android:textSize="34dp"
-            android:text="√️"/>
+            android:textSize="24dp"
+            android:text="✔"/>
         </TableRow>
     </TableLayout>
 
@@ -60,7 +59,7 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:selectAllOnFocus="true"
-        android:background="#ffffff"
+        android:background="@color/colorPrimary"
         android:enabled="true"
         android:fontFamily="Arial"
         android:gravity="start|top"
