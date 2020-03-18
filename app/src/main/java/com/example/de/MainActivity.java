@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         TabLayout tabs = findViewById(R.id.tabs);
         tabs.setupWithViewPager(viewPager);
 
-        TextView textView = findViewById(R.id.title);
+        final TextView textView = findViewById(R.id.title);
         textView.setText(new SimpleDateFormat("yyyy年MM月dd日").format(new Date(System.currentTimeMillis())));
 
         //指定Tab的位置
@@ -46,15 +46,19 @@ public class MainActivity extends AppCompatActivity {
                 switch (tab.getPosition()) {
                     case 0:
                         tab.setIcon(R.mipmap.day);
+                        textView.setText(new SimpleDateFormat("yyyy年MM月dd日").format(new Date(System.currentTimeMillis())));
                         break;
                     case 1:
                         tab.setIcon(R.mipmap.week);
+                        textView.setText(new SimpleDateFormat("yyyy年MM月dd日").format(new Date(System.currentTimeMillis())));
                         break;
                     case 2:
                         tab.setIcon(R.mipmap.month);
+                        textView.setText(new SimpleDateFormat("yyyy年MM月").format(new Date(System.currentTimeMillis())));
                         break;
                     case 3:
                         tab.setIcon(R.mipmap.year);
+                        textView.setText(new SimpleDateFormat("yyyy年").format(new Date(System.currentTimeMillis())));
                         break;
                     default:
                         break;

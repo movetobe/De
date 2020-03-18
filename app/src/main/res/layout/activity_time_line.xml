@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="top"
-        android:background="#FFFFFF">
+        android:background="@color/colorPrimary">
         <TableRow>
         <TextView
             android:id="@+id/title_each"
@@ -20,20 +20,37 @@
             android:fontFamily="Arial"
             android:gravity="left"
             android:minHeight="?actionBarSize"
-            android:background="#FFFFFF"
+            android:background="@color/colorPrimary"
             android:padding="@dimen/appbar_padding"
-            android:textColor="#C3C3C3"/>
-        <Button
+            android:textStyle="bold"
+            android:textSize="@dimen/title_size"
+            android:textColor="@color/text_color"/>
+        <TextView
+            android:id="@+id/nosaveButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="Arial"
+            android:background="@color/colorPrimary"
+            android:textColor="#FF9800"
+            android:gravity="center"
+            android:clickable="true"
+            android:textStyle="bold"
+            android:textSize="34dp"
+            android:text="x"/>
+        <TextView
             android:id="@+id/saveButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="top|right"
             android:layout_weight="1"
             android:fontFamily="Arial"
-            android:background="#FF9800"
-            android:textColor="#C3C3C3"
-            android:layout_margin="2dp"
-            android:text="保存"/>
+            android:background="@color/colorPrimary"
+            android:textColor="#FF9800"
+            android:gravity="center"
+            android:clickable="true"
+            android:textStyle="bold"
+            android:textSize="34dp"
+            android:text="√️"/>
         </TableRow>
     </TableLayout>
 
@@ -47,7 +64,6 @@
         android:enabled="true"
         android:fontFamily="Arial"
         android:gravity="start|top"
-        android:inputType="textMultiLine"
         android:focusable="true"
         android:cursorVisible="true"
         android:layout_margin="1dp"
