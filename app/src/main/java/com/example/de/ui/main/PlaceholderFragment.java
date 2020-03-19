@@ -86,12 +86,20 @@ public class PlaceholderFragment extends Fragment {
         }
     }
 
+    private void store_title(String key, String str) {
+        SharedPreferences sharedPreferences = getActivity().getSharedPreferences("De", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(key + "_title_" + getArguments().getInt(ARG_SECTION_NUMBER), str);
+        editor.commit();
+    }
+
     @Override
     public View onCreateView(
             @NonNull LayoutInflater inflater, final ViewGroup container,
             Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_main, container, false);
 
+        String str[] = new String[4];
         final TextView v1 = root.findViewById(R.id.time_line);
         final TextView v2 = root.findViewById(R.id.focus);
         final TextView v3 = root.findViewById(R.id.personal_todo);
@@ -100,32 +108,42 @@ public class PlaceholderFragment extends Fragment {
         final int index = getArguments().getInt(ARG_SECTION_NUMBER);
         switch (index) {
             case 1:
-                v1.setText("今日时间线");
-                v2.setText("今日聚焦");
-                v3.setText("今日个人待办");
-                v4.setText("今日工作待办");
+                str[0] = "今日时间线";
+                str[1] = "今日聚焦";
+                str[2] = "今日个人待办";
+                str[3] = "今日工作待办";
                 break;
             case 2:
-                v1.setText("本周任务清单");
-                v2.setText("本周聚焦");
-                v3.setText("本周个人待办");
-                v4.setText("本周工作待办");
+                str[0] = "本周任务清单";
+                str[1] = "本周聚焦";
+                str[2] = "本周个人待办";
+                str[3] = "本周工作待办";
                 break;
             case 3:
-                v1.setText("本月任务清单");
-                v2.setText("本月聚焦");
-                v3.setText("本月个人待办");
-                v4.setText("本月工作待办");
+                str[0] = "本月任务清单";
+                str[1] = "本月聚焦";
+                str[2] = "本月个人待办";
+                str[3] = "本月工作待办";
                 break;
             case 4:
-                v1.setText("今年任务清单");
-                v2.setText("今年聚焦");
-                v3.setText("今年个人待办");
-                v4.setText("今年工作待办");
+                str[0] = "今年任务清单";
+                str[1] = "今年聚焦";
+                str[2] = "今年个人待办";
+                str[3] = "今年工作待办";
                 break;
             default:
                 break;
         }
+        SharedPreferences sharedPreferences = getActivity().getSharedPreferences("De", Context.MODE_PRIVATE);
+        String stringTitle[] = new String[4];
+        stringTitle[0] = sharedPreferences.getString(tables[0] + "_title_" + getArguments().getInt(ARG_SECTION_NUMBER), str[0]);
+        stringTitle[1] = sharedPreferences.getString(tables[1] + "_title_" + getArguments().getInt(ARG_SECTION_NUMBER), str[1]);
+        stringTitle[2] = sharedPreferences.getString(tables[2] + "_title_" + getArguments().getInt(ARG_SECTION_NUMBER), str[2]);
+        stringTitle[3] = sharedPreferences.getString(tables[3] + "_title_" + getArguments().getInt(ARG_SECTION_NUMBER), str[3]);
+        v1.setText(stringTitle[0]);
+        v2.setText(stringTitle[1]);
+        v3.setText(stringTitle[2]);
+        v4.setText(stringTitle[3]);
 
         final AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
         v1.setOnClickListener(new View.OnClickListener() {
@@ -138,6 +156,7 @@ public class PlaceholderFragment extends Fragment {
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
                                 v1.setText(input.getText().toString());
+                                store_title(tables[0], v1.getText().toString());
                             }
                         });
                 builder.setNegativeButton("取消",
@@ -158,6 +177,7 @@ public class PlaceholderFragment extends Fragment {
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
                                 v2.setText(input.getText().toString());
+                                store_title(tables[1], v2.getText().toString());
                             }
                         });
                 builder.setNegativeButton("取消",
@@ -178,6 +198,7 @@ public class PlaceholderFragment extends Fragment {
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
                                 v3.setText(input.getText().toString());
+                                store_title(tables[2], v3.getText().toString());
                             }
                         });
                 builder.setNegativeButton("取消",
@@ -198,6 +219,7 @@ public class PlaceholderFragment extends Fragment {
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
                                 v4.setText(input.getText().toString());
+                                store_title(tables[3], v4.getText().toString());
                             }
                         });
                 builder.setNegativeButton("取消",
