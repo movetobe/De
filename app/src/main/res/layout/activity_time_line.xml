@@ -68,6 +68,7 @@
         android:cursorVisible="true"
         android:layout_margin="1dp"
         android:textCursorDrawable="@drawable/de_cursor"
-        android:visibility="visible" />
+        android:visibility="visible" >
+    </EditText>
 
 </LinearLayout>

@@ -1,12 +1,17 @@
 package com.example.de.ui.main;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -16,6 +21,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.de.FocusActivity;
+import com.example.de.MainActivity;
 import com.example.de.PersonalTodoActivity;
 import com.example.de.R;
 import com.example.de.TimeLineActivity;
@@ -82,7 +88,7 @@ public class PlaceholderFragment extends Fragment {
 
     @Override
     public View onCreateView(
-            @NonNull LayoutInflater inflater, ViewGroup container,
+            @NonNull LayoutInflater inflater, final ViewGroup container,
             Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_main, container, false);
 
@@ -121,6 +127,87 @@ public class PlaceholderFragment extends Fragment {
                 break;
         }
 
+        final AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+        v1.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                builder.setTitle("自定义标题");
+                final EditText input = new EditText(getContext());
+                input.setText(v1.getText().toString());
+                builder.setView(input);
+                builder.setPositiveButton("确定",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                v1.setText(input.getText().toString());
+                            }
+                        });
+                builder.setNegativeButton("取消",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                            }
+                        });
+                builder.create().show();
+            }
+        });
+        v2.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                builder.setTitle("自定义标题");
+                final EditText input = new EditText(getContext());
+                input.setText(v2.getText().toString());
+                builder.setView(input);
+                builder.setPositiveButton("确定",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                v2.setText(input.getText().toString());
+                            }
+                        });
+                builder.setNegativeButton("取消",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                            }
+                        });
+                builder.create().show();
+            }
+        });
+        v3.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                builder.setTitle("自定义标题");
+                final EditText input = new EditText(getContext());
+                input.setText(v3.getText().toString());
+                builder.setView(input);
+                builder.setPositiveButton("确定",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                v3.setText(input.getText().toString());
+                            }
+                        });
+                builder.setNegativeButton("取消",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                            }
+                        });
+                builder.create().show();
+            }
+        });
+        v4.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                builder.setTitle("自定义标题");
+                final EditText input = new EditText(getContext());
+                input.setText(v4.getText().toString());
+                builder.setView(input);
+                builder.setPositiveButton("确定",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                v4.setText(input.getText().toString());
+                            }
+                        });
+                builder.setNegativeButton("取消",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                            }
+                        });
+                builder.create().show();
+            }
+        });
         final TextView textView1 = root.findViewById(R.id.section_label1);
         pageViewModel.getmText(0).observe(this, new Observer<String>() {
             @Override
