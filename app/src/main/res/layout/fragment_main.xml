@@ -11,30 +11,38 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="#ECECF8">
+        android:background="@color/text_color">
         <TextView
             android:id="@+id/time_line"
             android:layout_width="0dp"
             android:layout_height="fill_parent"
             android:layout_weight="1"
-            android:background="#ffffff"
+            android:background="@color/colorPrimary"
             android:fontFamily="Arial"
             android:layout_marginRight="1dp"
-            android:textColor="#040303" />
+            android:padding="@dimen/text_padding"
+            android:textStyle="bold"
+            android:clickable="true"
+            android:textSize="@dimen/section_title_size"
+            android:textColor="@color/text_color"/>
 
         <TextView
             android:id="@+id/focus"
             android:layout_width="0dp"
             android:layout_height="fill_parent"
-            android:background="#ffffff"
+            android:background="@color/colorPrimary"
             android:layout_weight="1"
             android:fontFamily="Arial"
-            android:textColor="#040303" />
+            android:clickable="true"
+            android:padding="@dimen/text_padding"
+            android:textStyle="bold"
+            android:textSize="@dimen/section_title_size"
+            android:textColor="@color/text_color"/>
     </TableRow>
     <TableRow
         android:layout_height="0dp"
         android:layout_width="match_parent"
-        android:background="#ECECF8"
+        android:background="@color/text_color"
         android:layout_weight="10">
         <TextView
             android:id="@+id/section_label1"
@@ -43,10 +51,11 @@
             android:fontFamily="Arial"
             android:contextClickable="true"
             android:layout_weight="1"
-            android:lines="15"
+            android:lines="12"
             android:ellipsize="end"
             android:scrollbars="vertical"
-            android:background="#ffffff"
+            android:padding="@dimen/text_padding"
+            android:background="@color/colorPrimary"
             android:layout_marginRight="1dp"
             android:layout_marginBottom="1dp"
             android:textColor="#040303" />
@@ -58,58 +67,68 @@
             android:clickable="true"
             android:scrollbars="vertical"
             android:fontFamily="Arial"
-            android:background="#ffffff"
-            android:lines="15"
+            android:background="@color/colorPrimary"
+            android:padding="@dimen/text_padding"
+            android:lines="12"
             android:ellipsize="end"
             android:layout_weight="1"
             android:layout_marginBottom="1dp"
-            android:textColor="#040303" />
+            android:textColor="@color/normal_text_color" />
     </TableRow>
 
     <TableRow
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="#ECECF8">
+        android:background="@color/text_color">
         <TextView
             android:id="@+id/personal_todo"
             android:layout_width="0dp"
             android:fontFamily="Arial"
             android:layout_height="fill_parent"
             android:layout_weight="1"
-            android:background="#ffffff"
+            android:background="@color/colorPrimary"
+            android:padding="@dimen/text_padding"
+            android:clickable="true"
             android:layout_marginRight="1dp"
-            android:textColor="#040303" />
+            android:textStyle="bold"
+            android:textSize="@dimen/section_title_size"
+            android:textColor="@color/text_color"/>
 
         <TextView
             android:id="@+id/work_todo"
             android:layout_width="0dp"
             android:layout_height="fill_parent"
-            android:background="#ffffff"
+            android:background="@color/colorPrimary"
             android:fontFamily="Arial"
             android:layout_weight="1"
-            android:textColor="#040303" />
+            android:padding="@dimen/text_padding"
+            android:clickable="true"
+            android:textStyle="bold"
+            android:textSize="@dimen/section_title_size"
+            android:textColor="@color/text_color"/>
     </TableRow>
 
     <TableRow
         android:layout_height="0dp"
         android:layout_width="match_parent"
-        android:background="#ECECF8"
+        android:background="@color/text_color"
         android:layout_weight="10">
         <TextView
             android:id="@+id/section_label3"
             android:layout_width="0dp"
             android:layout_height="fill_parent"
-            android:background="#ffffff"
+            android:background="@color/colorPrimary"
             android:fontFamily="Arial"
             android:clickable="true"
             android:layout_weight="1"
-            android:lines="15"
+            android:lines="12"
             android:ellipsize="end"
             android:scrollbars="vertical"
             android:layout_marginRight="1dp"
             android:layout_marginBottom="1dp"
-            android:textColor="#040303" />
+            android:padding="@dimen/text_padding"
+            android:textColor="@color/normal_text_color" />
 
         <TextView
             android:id="@+id/section_label4"
@@ -117,12 +136,13 @@
             android:layout_height="fill_parent"
             android:clickable="true"
             android:fontFamily="Arial"
-            android:background="#ffffff"
-            android:lines="15"
+            android:background="@color/colorPrimary"
+            android:lines="12"
             android:ellipsize="end"
             android:scrollbars="vertical"
+            android:padding="@dimen/text_padding"
             android:layout_weight="1"
             android:layout_marginBottom="1dp"
-            android:textColor="#040303" />
+            android:textColor="@color/normal_text_color" />
     </TableRow>
 </TableLayout>

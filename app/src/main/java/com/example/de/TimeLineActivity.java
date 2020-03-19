@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -22,6 +23,8 @@ public class TimeLineActivity extends AppCompatActivity {
         setContentView(R.layout.activity_time_line);
         intent = getIntent();
         text = findViewById(R.id.editText);
+        TextView view = findViewById(R.id.title_each);
+        view.setText(name);
         String str = intent.getStringExtra(name);
         text.setText(str);
         text.requestFocus();

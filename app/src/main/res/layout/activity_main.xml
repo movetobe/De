@@ -21,6 +21,10 @@
             android:gravity="center"
             android:minHeight="?actionBarSize"
             android:padding="@dimen/appbar_padding"
+            android:textStyle="bold"
+            android:textSize="@dimen/title_size"
+            android:textColor="@color/text_color"
+            android:background="@color/colorPrimary"
             android:textAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Title" />
 
     </com.google.android.material.appbar.AppBarLayout>

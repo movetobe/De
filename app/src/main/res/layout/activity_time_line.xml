@@ -1,23 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".TimeLineActivity">
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/saveButton"
-        android:layout_width="wrap_content"
+    <TableLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="top|end"
-        android:fontFamily="Arial"
-        android:scaleType="center"
-        android:scrollbarSize="@dimen/de_save_size"
-        app:fabCustomSize="48dp"
-        app:fabSize="normal"
-        app:maxImageSize="@dimen/de_save_size"
-        app:srcCompat="@mipmap/de_save" />
+        android:layout_gravity="top"
+        android:background="@color/colorPrimary">
+        <TableRow>
+        <TextView
+            android:id="@+id/title_each"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="8"
+            android:fontFamily="Arial"
+            android:gravity="left"
+            android:minHeight="?actionBarSize"
+            android:background="@color/colorPrimary"
+            android:padding="@dimen/appbar_padding"
+            android:textStyle="bold"
+            android:textSize="@dimen/title_size"
+            android:textColor="@color/text_color"/>
+        <TextView
+            android:id="@+id/nosaveButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="Arial"
+            android:background="@color/colorPrimary"
+            android:textColor="#FF9800"
+            android:gravity="center"
+            android:clickable="true"
+            android:textSize="24dp"
+            android:text="✘"/>
+        <TextView
+            android:id="@+id/saveButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginRight="@dimen/text_padding"
+            android:fontFamily="Arial"
+            android:background="@color/colorPrimary"
+            android:textColor="#FF9800"
+            android:gravity="center"
+            android:clickable="true"
+            android:textSize="24dp"
+            android:text="✔"/>
+        </TableRow>
+    </TableLayout>
 
     <EditText
         android:id="@+id/editText"
@@ -25,15 +59,16 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:selectAllOnFocus="true"
-        android:background="#ffffff"
+        android:background="@color/colorPrimary"
         android:enabled="true"
         android:fontFamily="Arial"
         android:gravity="start|top"
-        android:inputType="textMultiLine"
         android:focusable="true"
+        android:padding="@dimen/text_padding"
         android:cursorVisible="true"
         android:layout_margin="1dp"
         android:textCursorDrawable="@drawable/de_cursor"
-        android:visibility="visible" />
+        android:visibility="visible" >
+    </EditText>
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</LinearLayout>
