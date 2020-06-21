@@ -1,6 +1,10 @@
 package com.example.de;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -39,6 +43,41 @@ public class MainActivity extends AppCompatActivity {
         two.setIcon(R.mipmap.week_nor);
         three.setIcon(R.mipmap.month_nor);
         four.setIcon(R.mipmap.year_nor);
+
+        final TextView score_view = findViewById(R.id.score);
+
+        SharedPreferences sharedPreferences = getSharedPreferences("De", Context.MODE_PRIVATE);
+        String string = sharedPreferences.getString("score", "0");
+        score_view.setText(String.valueOf(string));
+
+        ImageButton plus_button = findViewById(R.id.plus);
+        plus_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int score_value = Integer.valueOf(String.valueOf(score_view.getText()));
+                score_value++;
+                score_view.setText(String.valueOf(score_value));
+
+                SharedPreferences sharedPreferences = getSharedPreferences("De", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString("score", String.valueOf(score_value));
+                editor.commit();
+            }
+        });
+        ImageButton minus_button = findViewById(R.id.minus);
+        minus_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int score_value = Integer.valueOf(String.valueOf(score_view.getText()));
+                score_value--;
+                score_view.setText(String.valueOf(score_value));
+
+                SharedPreferences sharedPreferences = getSharedPreferences("De", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString("score", String.valueOf(score_value));
+                editor.commit();
+            }
+        });
 
         tabs.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
